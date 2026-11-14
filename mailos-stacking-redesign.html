@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4efe7">
+<title>MAILOS — Русская кухня. По-домашнему</title>
+<meta name="description" content="Семейное бистро русской кухни Mailos от Santorini в Сочи. Доставка за 50 минут, летняя терраса, вид на берег реки Сочи.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Manrope:wght@400;500;600;700&subset=cyrillic,cyrillic-ext&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4efe7;--bg2:#e9e0d4;--ink:#28251f;--muted:#777064;--wine:#682d35;--wine-dark:#4d2028;--line:rgba(40,37,31,.18);--serif:"Cormorant",Georgia,serif;--sans:"Manrope",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14px;overflow-x:clip}body.menu-open{overflow:hidden}a{color:inherit;text-decoration:none}img{display:block;width:100%;height:100%;object-fit:cover}button{font:inherit}.container{width:min(1380px,calc(100% - 96px));margin:auto}.eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--wine)}.serif{font-family:var(--serif);font-weight:500}.topline{height:31px;background:var(--wine-dark);color:#f5eee5;display:flex;align-items:center;justify-content:center;font-size:9px;letter-spacing:.2em;text-transform:uppercase}.header{height:86px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:25px;position:relative;z-index:200;transition:background .35s,height .35s}.header.scrolled{height:72px;background:rgba(244,239,231,.94);backdrop-filter:blur(14px);position:sticky;top:0}.logo{font:600 37px/.75 var(--serif);letter-spacing:.13em;color:var(--wine);white-space:nowrap}.logo small{display:block;text-align:center;font:8px var(--sans);letter-spacing:.3em;margin-top:9px;color:var(--ink)}.nav{display:flex;gap:27px;align-items:center;font-size:10px;letter-spacing:.1em;text-transform:uppercase}.nav a{position:relative;padding:10px 0}.nav a:after{content:"";position:absolute;left:0;bottom:3px;width:100%;height:1px;background:var(--wine);transform:scaleX(0);transform-origin:right;transition:transform .35s}.nav a:hover:after{transform:scaleX(1);transform-origin:left}.head-right{display:flex;align-items:center;gap:22px}.phone{font-size:11px;white-space:nowrap}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 25px;background:var(--wine);color:#fffaf2;border:1px solid var(--wine);font-size:9px;letter-spacing:.16em;text-transform:uppercase;transition:background .3s,color .3s,border .3s,transform .3s}.btn:hover{background:transparent;color:var(--wine);transform:translateY(-2px)}.btn.outline{background:transparent;color:var(--wine)}.btn.outline:hover{background:var(--wine);color:#fff}.menu-toggle{display:none;background:none;border:0;color:var(--wine);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+.hero{min-height:calc(100svh - 117px);display:grid;grid-template-columns:40% 60%;gap:25px;padding:35px 0 75px;align-items:stretch}.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:35px 5% 35px 0;position:relative;z-index:2}.hero-copy .eyebrow{margin-bottom:27px;opacity:0;animation:rise .8s .15s forwards}.hero h1{font:500 clamp(66px,8.1vw,120px)/.77 var(--serif);letter-spacing:-.055em;color:var(--wine);margin:0 0 33px;opacity:0;animation:rise .9s .28s forwards}.hero h1 em{font-weight:400;color:var(--ink);font-style:italic}.hero-copy p{max-width:390px;color:#625d53;line-height:1.95;font-size:12px;margin:0 0 31px;opacity:0;animation:rise .9s .42s forwards}.hero-actions{display:flex;align-items:center;gap:24px;opacity:0;animation:rise .9s .55s forwards}.text-link{font-size:9px;text-transform:uppercase;letter-spacing:.16em;border-bottom:1px solid var(--wine);padding-bottom:8px;color:var(--wine);transition:letter-spacing .3s}.text-link:hover{letter-spacing:.22em}.hero-media{position:relative;min-height:620px;overflow:hidden;isolation:isolate}.hero-media:before{content:"";position:absolute;z-index:2;inset:17px -17px -17px 17px;border:1px solid rgba(104,45,53,.5);pointer-events:none;opacity:0;animation:fade .9s .6s forwards}.hero-media img{transform:scale(1.025);animation:heroZoom 1.8s cubic-bezier(.2,.7,.2,1) forwards}.hero-media:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,20,14,.08),transparent 45%,rgba(30,20,14,.08));pointer-events:none}.hero-note{position:absolute;z-index:3;left:-1px;bottom:32px;background:var(--bg);padding:20px 26px;color:var(--wine);font:italic 23px/1 var(--serif);box-shadow:0 8px 35px #21180e14;animation:rise .8s .9s both}.hero-index{position:absolute;z-index:3;right:24px;bottom:24px;color:#fff;font-size:9px;letter-spacing:.18em}
+.scroll-cue{position:absolute;bottom:23px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:12px;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}.scroll-cue:after{content:"";width:45px;height:1px;background:var(--wine);animation:lineMove 1.8s infinite}
+.intro{padding:125px 0 135px;border-top:1px solid var(--line);display:grid;grid-template-columns:.85fr 1.15fr;gap:12%;align-items:start}.intro h2,.section-head h2{font:500 clamp(55px,6.5vw,88px)/.83 var(--serif);margin:20px 0;color:var(--wine);letter-spacing:-.04em}.intro-text{padding-top:38px;max-width:620px}.intro-text .lead{font:500 31px/1.12 var(--serif);color:var(--ink);margin:0 0 25px}.intro-text p:not(.lead){font-size:12px;line-height:2.05;color:#625d53;margin:0 0 16px}.intro-sign{font:italic 25px var(--serif);color:var(--wine);margin-top:28px}
+.marquee{overflow:hidden;background:var(--bg2);padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;z-index:50}.marquee-track{display:flex;white-space:nowrap;width:max-content;animation:marquee 32s linear infinite}.marquee span{font:italic 26px var(--serif);color:var(--wine);padding:0 34px}.marquee i{font-style:normal;font-size:13px;vertical-align:middle;color:#a88b7e}
+.food{background:var(--wine-dark);color:var(--bg);padding:115px 0 125px;position:relative;overflow:hidden}.food:before{content:"MAILOS";position:absolute;right:-2vw;top:10px;font:700 22vw/.8 var(--serif);color:rgba(255,255,255,.025);pointer-events:none}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:52px;position:relative;z-index:1}.section-head h2{color:var(--bg);margin-bottom:0}.section-head .eyebrow{color:#d6b9a8}.food-grid{display:grid;grid-template-columns:1.15fr .85fr .85fr;gap:22px;align-items:start;position:relative;z-index:1}.food-card{min-width:0}.food-card:nth-child(2){margin-top:70px}.food-card:nth-child(3){margin-top:25px}.food-photo{height:390px;overflow:hidden;background:#75675a;position:relative}.food-card:first-child .food-photo{height:500px}.food-photo img{transition:transform 1s cubic-bezier(.2,.7,.2,1);will-change:transform}.food-card:hover .food-photo img{transform:scale(1.055)}.food-caption{display:flex;justify-content:space-between;align-items:start;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.28);gap:15px}.food-caption h3{font:500 27px/1 var(--serif);margin:0}.food-caption span{font-size:8px;letter-spacing:.16em;text-transform:uppercase;color:#d8c9bd;white-space:nowrap;padding-top:5px}
+.story{padding:135px 0;display:grid;grid-template-columns:1fr .9fr;gap:11%;align-items:center}.story-photo{height:660px;position:relative;margin:0 18px 18px 0;overflow:visible}.story-photo:after{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--wine);z-index:-1}.story-photo img{position:relative;z-index:1}.story-copy{max-width:520px}.story-copy h2{font:500 clamp(58px,6.5vw,88px)/.83 var(--serif);color:var(--wine);margin:22px 0 32px;letter-spacing:-.04em}.story-copy p{line-height:2;color:#625d53;font-size:12px;margin:0 0 18px}.story-copy .text-link{display:inline-block;margin-top:14px}
+.gallery{padding:105px 0 120px;background:var(--bg2)}.gallery .section-head h2{color:var(--wine)}.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:clamp(200px,24vh,280px);gap:15px}.gallery-grid figure{margin:0;overflow:hidden;position:relative;background:#d5c9ba}.gallery-grid figure.wide{grid-column:span 2}.gallery-grid figure.tall{grid-row:span 2}.gallery-grid img{transition:transform .9s cubic-bezier(.2,.7,.2,1),filter .7s;filter:saturate(.88)}.gallery-grid figure:hover img{transform:scale(1.055);filter:saturate(1.05)}
+.popular{padding:105px 0 110px;background:var(--bg)}.popular .section-head h2{color:var(--wine)}.popular .section-head .eyebrow{color:var(--wine)}.pop-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--wine)}.pop-list li{border-bottom:1px solid var(--line)}.pop-list a{display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:20px;padding:26px 0;transition:padding .35s,color .35s,background .35s}.pop-list a:hover{padding-left:18px;color:var(--wine);background:rgba(104,45,53,.04)}.pop-n{font:italic 24px var(--serif);color:var(--wine)}.pop-t{font:500 clamp(26px,3vw,40px)/1.05 var(--serif)}.pop-go{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--wine);white-space:nowrap}
+.values{padding:95px 0 100px}.values-top{display:flex;justify-content:space-between;align-items:end;margin-bottom:42px}.values-top h2{font:500 clamp(46px,5vw,68px)/.9 var(--serif);color:var(--wine);margin:15px 0 0}.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}.value{border-top:1px solid var(--wine);padding-top:20px}.value em{display:block;font:italic 18px var(--serif);color:#a88b7e;margin-bottom:12px}.value b{font:500 28px/1.05 var(--serif);color:var(--wine);display:block;margin-bottom:10px}.value p{font-size:10px;line-height:1.85;color:var(--muted);margin:0}
+.cta{background:var(--wine);color:var(--bg);padding:90px 0;position:relative;overflow:hidden}.cta:after{content:"";position:absolute;width:430px;height:430px;border:1px solid rgba(255,255,255,.15);border-radius:50%;right:5%;top:-210px;box-shadow:0 0 0 35px rgba(255,255,255,.025),0 0 0 70px rgba(255,255,255,.02)}.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:35px;position:relative;z-index:1}.cta .eyebrow{color:#dfc8b9}.cta h2{font:500 clamp(48px,6vw,78px)/.86 var(--serif);margin:15px 0 0}
+.contacts{padding:100px 0 105px;background:var(--bg2)}.contacts-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:6%;align-items:stretch}.contacts h2{font:500 clamp(50px,5.6vw,76px)/.86 var(--serif);color:var(--wine);margin:18px 0 38px;letter-spacing:-.04em}.contact-row{border-top:1px solid var(--line);padding:20px 0}.contact-row:last-of-type{border-bottom:1px solid var(--line)}.contact-row small{display:block;font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}.contact-row a{font:500 clamp(26px,2.6vw,34px)/1.1 var(--serif);color:var(--wine);transition:color .3s}.contact-row a:hover{color:var(--ink)}.social{display:flex;gap:26px;margin-top:30px}.map{min-height:460px;position:relative;background:#d5c9ba;border:1px solid var(--line)}.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:sepia(.25) saturate(.9)}
+.footer{background:#2d2924;color:#eee5d9;padding:70px 0 30px}.footer .logo{color:#e5d3c5}.footer .logo small{color:#d5c9bc}.footer-top{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:50px;padding-bottom:58px}.footer p,.footer a{font-size:10px;line-height:2;color:#c9beb1}.footer h4{font:500 26px var(--serif);margin:0 0 15px;color:#f3e9dd}.footer-links{display:grid;grid-template-columns:1fr 1fr;gap:5px 18px}.footer a:hover{color:#fff}.copyright{border-top:1px solid rgba(255,255,255,.2);padding-top:20px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#a99e91;font-size:8px;letter-spacing:.1em}.copyright a{font-size:8px;letter-spacing:.1em}
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}.reveal.is-visible{opacity:1;transform:translateY(0)}.reveal-left{opacity:0;transform:translateX(-35px);transition:opacity .9s,transform .9s}.reveal-left.is-visible{opacity:1;transform:translateX(0)}.delay-1{transition-delay:.12s}.delay-2{transition-delay:.24s}.delay-3{transition-delay:.36s}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}@keyframes fade{to{opacity:1}}@keyframes heroZoom{to{transform:scale(1)}}@keyframes lineMove{0%,100%{transform:scaleX(.55);transform-origin:left}50%{transform:scaleX(1);transform-origin:left}}@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* Stacked full-screen panels */
+.stack-section{position:sticky;top:0;min-height:100svh;isolation:isolate;background-color:var(--bg)}
+.stack-section .stack-shade{position:absolute;inset:0;z-index:30;pointer-events:none;background:#211a17;opacity:var(--stack-cover,0);transition:opacity .08s linear}
+.hero.stack-section{padding-top:35px;padding-bottom:75px}
+.intro.stack-section,.story.stack-section,.values.stack-section,.popular.stack-section{background:var(--bg)}
+.gallery.stack-section,.contacts.stack-section{background:var(--bg2)}
+.food.stack-section{background:var(--wine-dark)}
+.cta.stack-section{display:flex;align-items:center;background:var(--wine)}
+.contacts.stack-section{display:flex;align-items:center}
+.footer.stack-section{min-height:auto;background:#2d2924}
+.intro.stack-section,.story.stack-section,.values.stack-section,.popular.stack-section,.gallery.stack-section,.food.stack-section,.contacts.stack-section{display:flex;flex-direction:column;justify-content:center}
+.intro.stack-section{display:grid}
+.story.stack-section{display:grid}
+.stack-section.container,.hero.stack-section{width:100%;max-width:none;margin:0;padding-left:max(48px,calc((100vw - 1380px)/2));padding-right:max(48px,calc((100vw - 1380px)/2))}
+.hero-media{min-width:0;width:100%;min-height:clamp(620px,calc(100svh - 185px),900px)}
+.hero-media img{object-position:center 52%}
+.food.stack-section>.container,.gallery.stack-section>.container,.popular.stack-section>.container,.contacts.stack-section>.container,.cta.stack-section>.container,.footer.stack-section>.container{width:100%;max-width:1380px;padding:0 48px}
+
+@media(max-width:1100px){.nav{gap:15px}.phone{display:none}.hero{grid-template-columns:40% 60%}.food-grid{grid-template-columns:1fr 1fr}.food-card:first-child{grid-column:span 2}.food-card:first-child .food-photo{height:440px}.food-card:nth-child(2),.food-card:nth-child(3){margin-top:0}.food-photo{height:330px}.story{gap:7%}.story-photo{height:560px}.contacts-grid{grid-template-columns:1fr;gap:40px}.values-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){
+html{scroll-padding-top:72px}
+.topline{height:27px;font-size:7px;letter-spacing:.12em}
+.header{height:72px}.header.scrolled{height:64px}.header.container{padding:0 22px}
+.logo{font-size:32px}.nav{display:none}.head-right{margin-left:auto}.head-right .phone{display:none}.head-right .btn{min-height:39px;padding:0 13px;font-size:8px}.menu-toggle{display:block}
+.stack-section.container,.hero.stack-section{padding-left:22px;padding-right:22px}
+.food.stack-section>.container,.gallery.stack-section>.container,.popular.stack-section>.container,.contacts.stack-section>.container,.cta.stack-section>.container,.footer.stack-section>.container{padding:0}
+.hero{display:flex;flex-direction:column-reverse;padding:17px 22px 70px;gap:35px;min-height:100svh}
+.hero-media{height:56svh;min-height:390px;max-height:620px;margin-right:9px}.hero-media:before{inset:10px -9px -10px 10px}.hero-note{bottom:20px;padding:16px 19px;font-size:20px}.hero-copy{padding:0 2px}.hero-copy .eyebrow{margin-bottom:19px}.hero h1{font-size:clamp(65px,17vw,100px);margin-bottom:23px}.hero-copy p{font-size:11px;max-width:440px}.hero-actions{gap:18px}.btn{min-height:45px;padding:0 17px;font-size:8px}.scroll-cue{display:none}
+.intro.stack-section,.story.stack-section,.gallery.stack-section,.values.stack-section,.food.stack-section,.popular.stack-section,.contacts.stack-section{padding-top:76px;padding-bottom:76px}
+.intro.stack-section{display:block}.intro h2,.section-head h2{font-size:62px}.intro-text{padding-top:18px}.intro-text .lead{font-size:27px}.intro-text p:not(.lead){font-size:11px}
+.section-head{display:block;margin-bottom:32px}.section-head .btn{margin-top:23px}.section-head .text-link{display:inline-block;margin-top:20px}
+.food-grid{grid-template-columns:1fr 1fr;gap:25px 13px}.food-card:first-child{grid-column:span 2}.food-card:first-child .food-photo{height:370px}.food-photo{height:230px}.food-caption{display:block;padding:13px 0}.food-caption h3{font-size:23px}.food-caption span{display:block;padding-top:8px}
+.story.stack-section{display:flex;flex-direction:column;gap:52px;justify-content:center}.story-photo{height:470px;width:calc(100% - 12px);margin-right:12px}.story-copy h2{font-size:65px}.story-copy p{font-size:11px}
+.gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:170px;gap:10px}.gallery-grid figure.wide{grid-column:span 2}
+.pop-list a{grid-template-columns:44px 1fr;gap:12px;padding:20px 0}.pop-go{display:none}.pop-t{font-size:25px}
+.values-top{display:block}.values-top h2{font-size:52px}.values-top .text-link{display:inline-block;margin-top:22px}.values-grid{grid-template-columns:1fr 1fr;gap:28px 17px}.value b{font-size:23px}
+.cta{padding:70px 0}.cta.stack-section{min-height:75svh}.cta-inner{display:block}.cta h2{font-size:62px}.cta .btn{margin-top:28px}
+.contacts h2{font-size:54px}.map{min-height:340px}
+.footer{padding-top:52px}.footer-top{grid-template-columns:1fr 1fr;gap:35px 20px}.footer-top>div:first-child{grid-column:span 2}.copyright{flex-direction:column;gap:12px}}
+@media(max-width:480px){.stack-section.container,.hero.stack-section{padding-left:18px;padding-right:18px}}
+@media(max-width:390px){.hero-media{min-height:340px}.hero h1{font-size:62px}.food-card:first-child .food-photo{height:300px}.food-photo{height:190px}.gallery-grid{grid-auto-rows:135px}.footer-top{grid-template-columns:1fr}.footer-top>div:first-child{grid-column:auto}.values-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal,.reveal-left{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="topline">MAILOS BY SANTORINI <span style="padding:0 10px">✦</span> РУССКАЯ КУХНЯ. ПО-ДОМАШНЕМУ</div>
+<header class="header container" id="header">
+  <a class="logo" href="#">MAILOS<small>РУССКАЯ КУХНЯ</small></a>
+  <nav class="nav" aria-label="Основная навигация"><a href="#about">О нас</a><a href="#menu">Кухня</a><a href="#gallery">Галерея</a><a href="#delivery">Доставка</a><a href="https://mailos.ru/konkurs/">Конкурс</a><a href="#contacts">Контакты</a></nav>
+  <div class="head-right"><a class="phone" href="tel:+79181889090">8 918 188 90 90</a><a class="btn" href="https://mailos.ru/delivery/">Сделать заказ</a><button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">Меню ☰</button></div>
+</header>
+<main>
+<section class="hero container stack-section">
+  <div class="hero-copy"><div class="eyebrow">Семейное бистро · Сочи</div><h1>Мило.<br><em>По-домашнему.</em></h1><p>Место, где современный город встречается с русским домашним столом. Знакомые блюда, щедрые порции и атмосфера, в которой хочется задержаться.</p><div class="hero-actions"><a class="btn" href="https://mailos.ru/delivery/">Заказать доставку</a><a class="text-link" href="#menu">Открыть меню</a></div></div>
+  <div class="hero-media"><img src="https://mailos.ru/wp-content/uploads/2025/08/%D0%BA%D0%B0%D1%80%D1%83%D1%81%D0%B5%D0%BB%D1%8C-3-scaled.png" alt="Фирменная вывеска и вход в бистро Mailos" fetchpriority="high" decoding="async"><div class="hero-note">Хороший стол.<br>Свои люди.</div><div class="hero-index">01 — 04</div></div>
+  <div class="scroll-cue">Листайте вниз</div>
+</section>
+
+<section class="intro container stack-section" id="about"><div class="reveal-left"><div class="eyebrow">Наша философия</div><h2>Почему<br>Майлос?</h2></div><div class="intro-text reveal delay-1"><p class="lead">На Руси многое начиналось со стола.</p><p>За столом встречали гостей, мирились, праздновали, собирали семью. На стол ставили не то, чем хотелось удивить, а то, чем хотелось угостить.</p><p>Хлеб. Суп. Картошку. Соленья. Пироги. Чай с вареньем. И, наверное, именно поэтому нам всегда нравилось простое русское слово — «мило». Мило — это не про украшения и не про интерьер. Это когда тебе рады. Когда можно сесть без церемоний. Когда на столе знакомая еда. Когда хочется задержаться ещё немного.</p><p>Из этого ощущения и появился Майлос. Не старорусское слово и не имя из учебника истории — наше имя для места, где современный город встречается с русским домашним столом.</p><p>Мы берём блюда, которые знаем с детства, и готовим их так, как хочется есть сегодня: борщ, оливье, холодец, селёдку, жареную картошку, котлеты, соленья, хороший хлеб, чай и варенье.</p><p>Без лубка. Без театра «под старину». Без попытки изображать русскую кухню. Просто русская еда, хороший стол и люди, которым здесь мило.</p><div class="intro-sign">Майлос. Русская кухня. По-домашнему.</div></div></section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Вкусно собраться вместе <i>✳</i></span><span>Тепло домашнего стола <i>✳</i></span><span>Знакомые вкусы <i>✳</i></span><span>Вкусно собраться вместе <i>✳</i></span><span>Тепло домашнего стола <i>✳</i></span><span>Знакомые вкусы <i>✳</i></span></div></div>
+
+<section class="food stack-section" id="menu"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">Вкус, который объединяет</div><h2>Любимое<br>на каждый день</h2></div><a class="btn outline" href="https://mailos.ru/delivery/">Перейти к меню</a></div>
+<div class="food-grid">
+<article class="food-card reveal"><div class="food-photo"><img src="https://mailos.ru/wp-content/uploads/2026/10/karusel-scaled-1.png" alt="Блюда для общего стола" loading="lazy"></div><div class="food-caption"><h3>Вкусно вместе</h3><span>01 / Для компании</span></div></article>
+<article class="food-card reveal delay-1"><div class="food-photo"><img src="https://mailos.ru/wp-content/uploads/2026/10/draniki_5-scaled-1.png" alt="Драники" loading="lazy"></div><div class="food-caption"><h3>С душой</h3><span>02 / Любимые блюда</span></div></article>
+<article class="food-card reveal delay-2"><div class="food-photo"><img src="https://mailos.ru/wp-content/uploads/2026/10/maczlos_5-scaled-1.png" alt="Горячая закуска Mailos" loading="lazy"></div><div class="food-caption"><h3>Щедро и просто</h3><span>03 / На каждый день</span></div></article>
+</div></div></section>
+
+<section class="popular stack-section" id="popular"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">Выбор гостей</div><h2>У нас<br>заказывают</h2></div><a class="text-link" href="https://mailos.ru/delivery/">Всё меню</a></div>
+<ol class="pop-list">
+<li class="reveal"><a href="https://mailos.ru/product/klab-sendvich-s-czyplenkom-i-bekonom/"><span class="pop-n">01</span><span class="pop-t">Клаб сэндвич с цыплёнком и беконом</span><span class="pop-go">Заказать →</span></a></li>
+<li class="reveal delay-1"><a href="https://mailos.ru/product/miks-gril/"><span class="pop-n">02</span><span class="pop-t">Микс гриль</span><span class="pop-go">Заказать →</span></a></li>
+<li class="reveal delay-1"><a href="https://mailos.ru/product/antrekot-s-perechnym-sousom/"><span class="pop-n">03</span><span class="pop-t">Антрекот с перечным соусом</span><span class="pop-go">Заказать →</span></a></li>
+<li class="reveal delay-2"><a href="https://mailos.ru/product/set-kebab-iz-telyatiny/"><span class="pop-n">04</span><span class="pop-t">Сет кебаб из телятины</span><span class="pop-go">Заказать →</span></a></li>
+<li class="reveal delay-2"><a href="https://mailos.ru/product/skovorodka-s-zharennoj-kartoshkoj-po-kupecheski/"><span class="pop-n">05</span><span class="pop-t">Сковородка с жареной картошкой по-купечески</span><span class="pop-go">Заказать →</span></a></li>
+</ol></div></section>
+
+<section class="story container stack-section"><div class="story-photo reveal-left"><img src="https://mailos.ru/wp-content/uploads/2026/10/karusel-2-scaled-1.png" alt="Гостья наслаждается обедом на террасе Mailos" loading="lazy"></div><div class="story-copy reveal delay-1"><div class="eyebrow">Место для своих</div><h2>Здесь всегда<br>рады гостям</h2><p>Уютное кафе с летней террасой и живописным видом на берег реки Сочи. Мы любим долгие разговоры, большие компании и простые поводы собраться вместе.</p><p>Приходите на обед, семейный ужин или важное событие — для каждого найдётся место за нашим столом. Принимаем новогодние корпоративы и сдаём зал для ваших праздников.</p><a class="text-link" href="https://mailos.ru/arenda/">Аренда зала</a> &nbsp;&nbsp; <a class="text-link" href="https://mailos.ru/corporativy/">Новогодние корпоративы</a></div></section>
+
+<section class="gallery stack-section" id="gallery"><div class="container"><div class="section-head reveal"><div><div class="eyebrow">В деталях</div><h2>Галерея</h2></div><a class="text-link" href="https://mailos.ru/aktsii-i-novosti/">Акции и новости</a></div><div class="gallery-grid">
+<figure class="reveal tall"><img src="https://mailos.ru/wp-content/uploads/2026/10/karusel-scaled-1.png" alt="Терраса ресторана Mailos" loading="lazy"></figure>
+<figure class="reveal delay-1"><img src="https://mailos.ru/wp-content/uploads/2026/10/img_8101-scaled-1.png" alt="Блюдо и напиток" loading="lazy"></figure>
+<figure class="reveal delay-2"><img src="https://mailos.ru/wp-content/uploads/2026/10/midii11_1-scaled-1.png" alt="Мидии" loading="lazy"></figure>
+<figure class="reveal delay-1 wide"><img src="https://mailos.ru/wp-content/uploads/2025/08/IMG_9038-scaled.png" alt="Интерьер Mailos" loading="lazy"></figure>
+<figure class="reveal"><img src="https://mailos.ru/wp-content/uploads/2026/10/img_9061-1.png" alt="Семейная атмосфера ресторана" loading="lazy"></figure>
+<figure class="reveal delay-1"><img src="https://mailos.ru/wp-content/uploads/2026/10/img_8121-1.png" alt="Подача блюда" loading="lazy"></figure>
+<figure class="reveal delay-2"><img src="https://mailos.ru/wp-content/uploads/2025/08/IMG_9064-scaled.png" alt="Блюдо Mailos" loading="lazy"></figure>
+<figure class="reveal"><img src="https://mailos.ru/wp-content/uploads/2025/08/IMG_9049-scaled.png" alt="Стол Mailos" loading="lazy"></figure>
+<figure class="reveal delay-1"><img src="https://mailos.ru/wp-content/uploads/2025/08/IMG_9047-scaled.png" alt="Детали интерьера" loading="lazy"></figure>
+<figure class="reveal delay-2"><img src="https://mailos.ru/wp-content/uploads/2025/08/IMG_9042-scaled.png" alt="Атмосфера Mailos" loading="lazy"></figure>
+</div></div></section>
+
+<section class="values container stack-section" id="delivery"><div class="values-top reveal"><div><div class="eyebrow">Заботимся о простом</div><h2>Хорошо, когда<br>всё рядом</h2></div><a class="text-link" href="https://mailos.ru/delivery/">Заказать доставку</a></div><div class="values-grid">
+<div class="value reveal"><em>01</em><b>Доставка в течение 50 минут</b><p>Привозим горячие блюда, чтобы вкусный обед был рядом.</p></div>
+<div class="value reveal delay-1"><em>02</em><b>Только свежие продукты</b><p>Готовим с вниманием к качеству каждого ингредиента.</p></div>
+<div class="value reveal delay-2"><em>03</em><b>Комплименты при корпоративных заказах</b><p>Приятные бонусы для компаний и коллективов.</p></div>
+<div class="value reveal delay-3"><em>04</em><b>Система лояльности</b><p>Привилегии для постоянных гостей — <a href="https://mailos.ru/sistema-loyaln/" style="color:var(--wine);border-bottom:1px solid var(--wine)">узнать подробнее</a>.</p></div>
+</div></section>
+
+<section class="cta stack-section"><div class="container cta-inner"><div class="reveal"><div class="eyebrow">Ваш стол уже накрыт</div><h2>Встретимся<br>в Майлос?</h2></div><a class="btn outline reveal delay-1" href="https://mailos.ru/delivery/">Заказать любимое</a></div></section>
+
+<section class="contacts stack-section" id="contacts"><div class="container"><div class="contacts-grid">
+<div class="reveal"><div class="eyebrow">Будем на связи</div><h2>Контакты</h2>
+<div class="contact-row"><small>Ресторан</small><a href="tel:89181889090">8 918 188 90 90</a></div>
+<div class="contact-row"><small>Доставка</small><a href="tel:89881889090">8 988 188 90 90</a></div>
+<div class="contact-row"><small>Почта</small><a href="mailto:info@mailos.ru">info@mailos.ru</a></div>
+<div class="social"><a class="text-link" href="https://vk.com/cafe_mailos" target="_blank" rel="noopener">ВКонтакте</a><a class="text-link" href="https://t.me/mailos_by_santorini" target="_blank" rel="noopener">Telegram</a></div></div>
+<div class="map reveal delay-1"><iframe title="Mailos by Santorini на карте" src="https://yandex.com/map-widget/v1/?ll=39.731513%2C43.590880&mode=search&oid=185967066455&ol=biz&z=14.76" loading="lazy" allowfullscreen></iframe></div>
+</div></div></section>
+</main>
+
+<footer class="footer stack-section"><div class="container"><div class="footer-top"><div><a class="logo" href="#">MAILOS<small>РУССКАЯ КУХНЯ</small></a><p>Семейное бистро русской кухни<br>Mailos by Santorini · Сочи</p></div><div><h4>Навигация</h4><div class="footer-links"><a href="#about">О нас</a><a href="https://mailos.ru/russkaya-kuhnya/">Русская кухня</a><a href="https://mailos.ru/corporativy/">Корпоративы</a><a href="https://mailos.ru/arenda/">Аренда зала</a><a href="https://mailos.ru/delivery/">Доставка</a><a href="https://mailos.ru/konkurs/">Конкурс</a><a href="https://mailos.ru/sistema-loyaln/">Система лояльности</a><a href="https://mailos.ru/aktsii-i-novosti/">Акции и новости</a></div></div><div><h4>Контакты</h4><p><a href="tel:89181889090">Ресторан: 8 918 188 90 90</a><br><a href="tel:89881889090">Доставка: 8 988 188 90 90</a><br><a href="mailto:info@mailos.ru">info@mailos.ru</a></p><p><a href="https://vk.com/cafe_mailos" target="_blank" rel="noopener">VK</a> · <a href="https://t.me/mailos_by_santorini" target="_blank" rel="noopener">Telegram</a></p></div></div><div class="copyright"><span>© MAILOS BY SANTORINI</span><span>Русская кухня. По-домашнему.</span><span><a href="https://mailos.ru/privacy/">Политика конфиденциальности</a> &nbsp;·&nbsp; <a href="https://mailos.ru/public/">Пользовательское соглашение</a></span></div></div></footer>
+
+<script>
+(() => {
+  const stackSections=[...document.querySelectorAll('.stack-section')];
+  stackSections.forEach((section,index)=>{
+    section.style.zIndex=String(index+1);
+    const shade=document.createElement('div');
+    shade.className='stack-shade';
+    section.appendChild(shade);
+  });
+
+  /* Секции выше экрана не должны "залипать" и обрезаться:
+     даём им отрицательный top, чтобы можно было доскроллить до их низа */
+  const fitSticky=()=>{
+    const vh=window.innerHeight;
+    stackSections.forEach(s=>{
+      s.style.top=Math.min(0,vh-s.offsetHeight)+'px';
+    });
+  };
+
+  let ticking=false;
+  const updateStack=()=>{
+    const vh=window.innerHeight;
+    stackSections.forEach((section,i)=>{
+      const next=stackSections[i+1];
+      if(!next){section.style.setProperty('--stack-cover','0');return;}
+      const nextTop=next.getBoundingClientRect().top;
+      const progress=Math.max(0,Math.min(1,(vh-nextTop)/vh));
+      section.style.setProperty('--stack-cover',String(progress*.16));
+    });
+    ticking=false;
+  };
+  const request=()=>{if(!ticking){ticking=true;requestAnimationFrame(updateStack);}};
+  const refresh=()=>{fitSticky();request();};
+  window.addEventListener('scroll',request,{passive:true});
+  window.addEventListener('resize',refresh);
+  window.addEventListener('load',refresh);
+  document.querySelectorAll('img[loading="lazy"]').forEach(img=>img.addEventListener('load',refresh));
+  if('ResizeObserver' in window){const ro=new ResizeObserver(refresh);stackSections.forEach(s=>ro.observe(s));}
+  refresh();
+
+  const header=document.getElementById('header');
+  const updateHeader=()=>header.classList.toggle('scrolled',window.scrollY>30);
+  updateHeader(); window.addEventListener('scroll',updateHeader,{passive:true});
+
+  const items=document.querySelectorAll('.reveal,.reveal-left');
+  if('IntersectionObserver' in window){
+    const observer=new IntersectionObserver((entries,obs)=>entries.forEach(entry=>{
+      if(entry.isIntersecting){entry.target.classList.add('is-visible');obs.unobserve(entry.target);}
+    }),{threshold:0,rootMargin:'0px 0px -8% 0px'});
+    items.forEach(el=>observer.observe(el));
+  }else{items.forEach(el=>el.classList.add('is-visible'));}
+
+  const hero=document.querySelector('.hero-media');
+  if(hero && matchMedia('(hover:hover) and (prefers-reduced-motion:no-preference)').matches){
+    hero.addEventListener('pointermove',e=>{
+      const r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      hero.querySelector('img').style.transform=`scale(1.025) translate(${x*-10}px,${y*-8}px)`;
+    });
+    hero.addEventListener('pointerleave',()=>hero.querySelector('img').style.transform='scale(1)');
+  }
+})();
+</script>
+</body>
+</html>
